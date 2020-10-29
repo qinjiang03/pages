@@ -53,10 +53,10 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-south-1
+          aws-region: eu-central-1
       - name: EKS Login
         run: |
-          aws eks --region ap-south-1 update-kubeconfig --name dees-cloud
+          aws eks --region eu-central-1 update-kubeconfig --name hexa
           kubectl config get-contexts
           chmod +x ./scripts/deploy-to-k8s.sh
           bash ./scripts/deploy-to-k8s.sh
